@@ -1,5 +1,5 @@
 .nav {
-  background-color: color(yellow, pizza);
+  background-color: color(yellow, buttercup);
   box-shadow: 0 3px 5px 3px rgba(color(mono, black), .2);;
   display: flex;
   flex-direction: column;
@@ -18,19 +18,20 @@
     background-color: transparent;
     box-shadow: none;
     height: auto;
-    left: 0;
+    left: auto;
     max-width: 100%;
     opacity: 1;
     padding: 0;
-    position: relative;
+    position: absolute;
+    right: 70px;
     visibility: visible;
-    width: 100%;
+    width: auto;
   }
 
   &__logo {
     display: block;
     margin: 0 auto;
-    width: 200px;
+    width: 120px;
   }
 
   &__logo {

@@ -2,7 +2,8 @@
   margin-top: 30px;
 
   @include media(">=desktop") {
-
+    display: flex;
+    transition: margin-top .3s ease;
   }
 
   .menu-icon {
@@ -23,13 +24,15 @@
     color: color(mono, white);
     display: block;
     font-family: $font-title;
-    font-weight: fw("bold");
+    font-weight: fw("medium");
+    font-size: 18px;
 
     @include media(">=desktop") {
       color: color(mono, white);
+      font-size: 23px;
 
       &::after {
-        background: color(mono, white);
+        background: color(yellow, buttercup);
         bottom: -6px;
         content: "";
         display: block;
@@ -43,13 +46,14 @@
   }
 
   &__item {
-    font-size: 18px;
     margin-bottom: 30px;
     position: relative;
     text-align: center;
 
     &:hover {
       .menu__link {
+        color: color(yellow, buttercup);
+
         &::after {
           opacity: 1;
           bottom: -3px;
@@ -60,6 +64,7 @@
     @include media(">=desktop") {
       margin-bottom: 0;
       margin-right: 30px;
+      font-size: 23px;
 
       &:last-child {
         margin-right: 0;

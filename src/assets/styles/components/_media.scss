@@ -13,6 +13,7 @@
   &__title {
     color: color(brown, old-copper);
     flex: 1;
+    font-family: $font-title;
     font-size: 18px;
     font-weight: fw("medium");
     margin-bottom: 15px;

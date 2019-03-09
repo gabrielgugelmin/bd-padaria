@@ -1,0 +1,108 @@
+.grid {
+  position: relative;
+  // margin: 45px 0;
+
+  @include media(">=desktop") {
+    margin: 40px 0 60px;
+  }
+
+  &__footer {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+
+    .button {
+      @include media(">=desktop") {
+        padding: 14px 25px;
+        font-size: 24px;
+      }
+    }
+
+  }
+}
+
+.item {
+  display: block;
+  height: 200px;
+  margin: 30px 10px;
+  position: absolute;
+  width: 125px;
+  z-index: 1;
+
+  @include media(">=375px") {
+    width: 150px;
+  }
+
+  @include media(">=tablet") {
+    margin: 35px 25px;
+    height: 270px;
+    width: 180px;
+  }
+
+  @include media(">=desktop") {
+    height: 360px;
+    margin-left: 0;
+    margin-right: 50px;
+    width: calc((100% / 3) - (100px / 3) );
+
+    &:nth-child(3n) {
+      margin-right: 0;
+    }
+  }
+
+  @include media(">=larger") {
+    height: 460px;
+  }
+
+  &__content {
+    height: 100%;
+    position: relative;
+    width: 100%;
+  }
+
+  &__img {
+    max-height: 100%;
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+  }
+
+  &__title {
+    color: color(mono, white);
+    font-family: $font-title;
+    font-weight: fw("semibold");
+    font-size: 16px;
+    text-align: center;
+    margin-top: 15px;
+
+    @include media(">=tablet") {
+      font-size: 20px;
+    }
+
+    @include media(">=desktop") {
+      font-size: 24px;
+    }
+  }
+}
+.item.muuri-item-dragging {
+  z-index: 3;
+}
+.item.muuri-item-releasing {
+  z-index: 2;
+}
+.item.muuri-item-hidden {
+  z-index: 0;
+}
+
+
+.filter {
+  .button {
+    &:first-child {
+      margin-right: 10px;
+
+      @include media(">=tablet") {
+        margin-right: 15px;
+      }
+    }
+  }
+}

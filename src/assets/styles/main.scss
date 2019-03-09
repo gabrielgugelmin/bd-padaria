@@ -12,26 +12,75 @@ html, body {
 }
 
 .page {
-  background-color: color(gray, boulder);
 
-  &__container {
+  &-content{
+    flex: 1;
     @extend .container;
     padding: 0;
     position: relative;
+  }
 
-    @include media("<desktop") {
-      max-width: 100%;
-    }
-
-    @include media(">=desktop") {
-      padding-left: 15px;
-      padding-right: 15px;
-    }
+  &-wrapper {
+    background-color: color(gray, boulder);
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
   }
 }
+
+// .page {
+//   background-color: color(gray, boulder);
+
+//   &__container {
+//     @extend .container;
+//     padding: 0;
+//     position: relative;
+
+//     @include media("<desktop") {
+//       max-width: 100%;
+//     }
+
+//     @include media(">=desktop") {
+//       // padding-left: 15px;
+//       // padding-right: 15px;
+//     }
+//   }
+// }
 
 .diferencial {
   @include media(">=desktop") {
     background: right center / auto no-repeat url("../img/quem-somos.jpg") color(gray, gallery);
   }
 }
+
+.produtos {
+  background: left top / auto no-repeat url("../img/bg-produtos.jpg") color(yellow, buttercup);
+  clip-path: polygon(100% 40px, 101% calc(100% - 58px), 50% 100%, 0 calc(100% - 58px), 0 0);
+  position: relative;
+  top: -40px;
+  z-index: z("default");
+
+  &__logo {
+    display: none;
+
+    @include media(">=tablet") {
+      display: block;
+      margin: 0 auto;
+      width: 140px;
+    }
+  }
+
+  @include media(">=desktop") {
+    padding-bottom: 100px;
+    padding-top: 135px;
+  }
+}
+
+.videos {
+  clip-path: polygon(100% 0, 101% calc(100% - 58px), 50% 100%, 0 calc(100% - 58px), 0 0);
+  position: relative;
+  top: -100px;
+  padding-top: 120px;
+}
+
+

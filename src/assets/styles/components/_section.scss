@@ -4,12 +4,17 @@
 
   &__title {
     color: color(brown, old-copper);
-    font-weight: fw("medium");
+    font-family: $font-title;
     font-size: 26px;
+    font-weight: fw("medium");
     margin-bottom: 25px;
 
     @include media(">=desktop") {
       font-size: 38px;
+    }
+
+    &--center {
+      text-align: center;
     }
   }
 
@@ -25,5 +30,23 @@
 
   .accordion {
     margin-bottom: 40px;
+  }
+
+  &--yellow {
+    background-color: color(yellow, buttercup);
+
+    .section__title,
+    .section__content p {
+      color: color(mono, white);
+    }
+  }
+
+  &--purple {
+    background-color: color(purple, purple-heart);
+
+    .section__title,
+    .section__content p {
+      color: color(mono, white);
+    }
   }
 }

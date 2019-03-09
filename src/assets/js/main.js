@@ -25,9 +25,14 @@ $(function () {
 
   // slider baner
   $('.js-banner-slider').slick({
-    arrows: true,
-    prevArrow: '<button type="button" class="depo__arrow depo__arrow--prev"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 54.5 95" style="enable-background:new 0 0 54.5 95;" xml:space="preserve"><g><path fill="#145f93" d="M8.7,1.5C7.7,0.5,6.5,0,5.1,0S2.5,0.6,1.5,1.5C0.5,2.5,0,3.7,0,5.1s0.5,2.6,1.5,3.6l38.9,38.8L1.5,86.3 c-1,1-1.5,2.2-1.5,3.6s0.5,2.6,1.5,3.6S3.7,95,5,95c1.2,0,2.5-0.5,3.5-1.4l46-46L8.7,1.5z"/></g></svg></button>',
-    nextArrow: '<button type="button" class="depo__arrow depo__arrow--next"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 54.5 95" style="enable-background:new 0 0 54.5 95;" xml:space="preserve"><g><path fill="#145f93" d="M8.7,1.5C7.7,0.5,6.5,0,5.1,0S2.5,0.6,1.5,1.5C0.5,2.5,0,3.7,0,5.1s0.5,2.6,1.5,3.6l38.9,38.8L1.5,86.3 c-1,1-1.5,2.2-1.5,3.6s0.5,2.6,1.5,3.6S3.7,95,5,95c1.2,0,2.5-0.5,3.5-1.4l46-46L8.7,1.5z"/></g></svg></button>',
+    arrows: false
+  });
+
+  // slider youtube
+  $('.js-video-slider').slick({
+    infinite: true,
+    slidesToShow: 3,
+    slidesToScroll: 3
   });
 
   // SCROLLBAR
@@ -59,6 +64,29 @@ $(function () {
     dropDown.stop(false, true).slideToggle();
 
     e.preventDefault();
+  });
+
+  // Filtro produtos
+  var grid = new Muuri('.grid', {
+    // items: '[data-produto="melhorador"]',
+    layout: {
+      // rounding: true
+    }
+    // sortData: {
+    //   produto: function (item, element) {
+    //     return element.getAttribute('data-produto').toUpperCase();
+    //   }
+    // }
+  });
+
+  grid.filter('[data-produto="melhorador"]');
+
+  $('.js-melhoradores').on('click', function () {
+    grid.filter('[data-produto="melhorador"]');
+  });
+
+  $('.js-linha').on('click', function () {
+    grid.filter('[data-produto="rustyk"]');
   });
 });
 

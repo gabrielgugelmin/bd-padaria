@@ -1,13 +1,21 @@
 .button {
   background-color: color(yellow, pizza);
-  border-radius: 30px;
   border: 2px solid color(mono, white);
+  border-radius: 30px;
   color: color(mono, white);
+  cursor: pointer;
   display: inline-block;
   font-family: $font-title;
   font-size: 14px;
   font-weight: fw("semibold");
   padding: 8px 30px;
+  transition: .25s ease-in-out;
+
+  &:hover {
+    background-color: color(mono, white);
+    border-color: color(yellow, pizza);
+    color: color(yellow, pizza);
+  }
 
   @include media(">=desktop") {
     font-size: 18px;
