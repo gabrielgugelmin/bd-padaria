@@ -1,4 +1,10 @@
 .video-slider {
+  padding: 0 30px;
+
+  @include media(">=desktop") {
+    padding: 0 75px;
+  }
+
   &__item {
     background-position: center;
     background-repeat: no-repeat;
@@ -21,6 +27,32 @@
       transform: translateY(-50%);
       width: 50px;
       z-index: z("default");
+    }
+  }
+
+  &__arrow {
+    background: transparent;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 14px;
+
+    @include media(">=tablet") {
+      width: 20px;
+    }
+
+    @include media(">=wide") {
+      width: 30px;
+    }
+
+    &--prev {
+      left: 0;
+      transform: translateY(-50%) scaleX(-1);
+    }
+
+    &--next {
+      right: 0;
     }
   }
 }

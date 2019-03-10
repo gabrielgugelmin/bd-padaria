@@ -81,6 +81,30 @@ html, body {
   position: relative;
   top: -100px;
   padding-top: 120px;
+  z-index: z("default");
+
+  &__link {
+    display: block;
+    color: color(mono, white);
+    font-family: $font-text;
+    font-size: 18px;
+    font-weight: fw("light");
+    text-align: center;
+    margin: 25px 0;
+  }
 }
 
+.instagram {
+  position: relative;
+  top: -160px;
+  padding-top: 80px;
 
+  &__title {
+    font-family: $kg;
+    color: color(purple, windsor);
+    font-size: 32px;
+    text-align: center;
+    font-weight: fw("regular");
+    margin-bottom: 15px;
+  }
+}

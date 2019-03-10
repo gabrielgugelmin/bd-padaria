@@ -1,0 +1,93 @@
+.instafeed {
+  display: flex;
+  flex-wrap: wrap;
+
+  &__item {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: relative;
+    width: calc(33.333%);
+
+    @include media(">=desktop") {
+      width: calc(100% / 5);
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      padding-bottom: 100%;
+    }
+
+    &::after {
+      background-color: rgba(color(mono, black), .42);
+      content: "";
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+    }
+  }
+
+  &__info {
+    display: flex;
+    z-index: z("default");
+    position: relative;
+  }
+
+  &__content {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
+  &__icon {
+    align-items: center;
+    color: color(mono, white);
+    display: flex;
+    font-size: 14px;
+    margin-right: 20px;
+
+    @include media(">=tablet") {
+      font-size: 16px;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &::after {
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      content: "";
+      display: block;
+      height: 18px;
+      margin-left: 5px;
+      width: 18px;
+
+      @include media(">=tablet") {
+        height: 24px;
+        width: 24px;
+      }
+    }
+
+    &--heart {
+      &::after {
+        background-image: url(../img/heart.svg);
+      }
+    }
+
+    &--comment {
+      &::after {
+        background-image: url(../img/comment.svg);
+      }
+    }
+  }
+}

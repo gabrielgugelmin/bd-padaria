@@ -70,6 +70,15 @@
 
     .menu {
       margin-top: 18px;
+
+      &__item {
+        &:hover {
+          .menu__link {
+            color: color(brown, old-copper);
+          }
+        }
+      }
+
     }
 
     .menu-icon {

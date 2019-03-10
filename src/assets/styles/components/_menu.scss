@@ -26,6 +26,7 @@
     font-family: $font-title;
     font-weight: fw("medium");
     font-size: 18px;
+    transition: color .25s ease-in-out;
 
     @include media(">=desktop") {
       color: color(mono, white);

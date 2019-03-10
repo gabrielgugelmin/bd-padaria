@@ -31,9 +31,43 @@ $(function () {
   // slider youtube
   $('.js-video-slider').slick({
     infinite: true,
-    slidesToShow: 3,
-    slidesToScroll: 3
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: true,
+    prevArrow: '<button type="button" class="video-slider__arrow video-slider__arrow--prev"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 54.5 95" style="enable-background:new 0 0 54.5 95;" xml:space="preserve"><g><path fill="#FFF" d="M8.7,1.5C7.7,0.5,6.5,0,5.1,0S2.5,0.6,1.5,1.5C0.5,2.5,0,3.7,0,5.1s0.5,2.6,1.5,3.6l38.9,38.8L1.5,86.3 c-1,1-1.5,2.2-1.5,3.6s0.5,2.6,1.5,3.6S3.7,95,5,95c1.2,0,2.5-0.5,3.5-1.4l46-46L8.7,1.5z"/></g></svg></button>',
+    nextArrow: '<button type="button" class="video-slider__arrow video-slider__arrow--next"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 54.5 95" style="enable-background:new 0 0 54.5 95;" xml:space="preserve"><g><path fill="#FFF" d="M8.7,1.5C7.7,0.5,6.5,0,5.1,0S2.5,0.6,1.5,1.5C0.5,2.5,0,3.7,0,5.1s0.5,2.6,1.5,3.6l38.9,38.8L1.5,86.3 c-1,1-1.5,2.2-1.5,3.6s0.5,2.6,1.5,3.6S3.7,95,5,95c1.2,0,2.5-0.5,3.5-1.4l46-46L8.7,1.5z"/></g></svg></button>',
+    mobileFirst: true,
+    responsive: [
+      {
+        breakpoint: 767,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+        }
+      },
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+        }
+      },
+    ]
   });
+
+  // INSTAGRAM
+  var device = checkWindowWidth();
+  var feed = new Instafeed({
+    accessToken: 'ACCESS_TOKEN',
+    clientId: 'CLIENT_ID',
+    get: 'user',
+    limit: (device === 'mobile') ? 6 : 5,
+    resolution: 'low_resolution',
+    tagName: 'TAG_NAME',
+    template: '<a target="_blank" class="instafeed__item" style="background-image: url({{image}})" href="{{link}}"><div class="instafeed__content"><div class="instafeed__info"><span class="instafeed__icon instafeed__icon--heart">{{likes}}</span><span class="instafeed__icon instafeed__icon--comment">{{comments}}</span></div></div></a>',
+    userId: 'USER_ID'
+  });
+  feed.run();
 
   // SCROLLBAR
   if ($('.js-scrollbar').length > 0) {
@@ -67,17 +101,7 @@ $(function () {
   });
 
   // Filtro produtos
-  var grid = new Muuri('.grid', {
-    // items: '[data-produto="melhorador"]',
-    layout: {
-      // rounding: true
-    }
-    // sortData: {
-    //   produto: function (item, element) {
-    //     return element.getAttribute('data-produto').toUpperCase();
-    //   }
-    // }
-  });
+  var grid = new Muuri('.grid');
 
   grid.filter('[data-produto="melhorador"]');
 
