@@ -58,14 +58,14 @@ $(function () {
   // INSTAGRAM
   var device = checkWindowWidth();
   var feed = new Instafeed({
-    accessToken: 'ACCESS_TOKEN',
-    clientId: 'CLIENT_ID',
+    accessToken: '5417155028.de1e206.ddbace0852b54239a6ac34dd0318d8ae',
+        clientId: 'de1e2068b9e34c908d25bb6db2bc21d6',
     get: 'user',
     limit: (device === 'mobile') ? 6 : 5,
     resolution: 'low_resolution',
-    tagName: 'TAG_NAME',
+    tagName: 'rosalvo',
     template: '<a target="_blank" class="instafeed__item" style="background-image: url({{image}})" href="{{link}}"><div class="instafeed__content"><div class="instafeed__info"><span class="instafeed__icon instafeed__icon--heart">{{likes}}</span><span class="instafeed__icon instafeed__icon--comment">{{comments}}</span></div></div></a>',
-    userId: 'USER_ID'
+    userId: '5417155028'
   });
   feed.run();
 
@@ -75,8 +75,8 @@ $(function () {
   }
 
   // SMOOTH SCROLL
-  $('.js-scroll').on('click', function(event) {
-    smoothScroll();
+  $('.js-scroll').on('click', function(e) {
+    smoothScroll(this, e);
   });
 
   $('.accordion > li:eq(0) a').addClass('active').next().slideDown();
@@ -158,17 +158,17 @@ function clickOutsideMenu() {
   });
 }
 
-function smoothScroll() {
-	if (this.hash !== '') {
+function smoothScroll(link, event) {
+	if (link.hash !== '') {
 		event.preventDefault();
-		var hash = this.hash;
+		var hash = link.hash;
 
 		$('html, body').animate({
 			scrollTop: $(hash).offset().top - 100
 		}, 800, function(){
 
 			// Add hash (#) to URL when done scrolling (default click behavior)
-			//window.location.hash = hash;
+			window.location.hash = hash;
 		});
 	}
 }
