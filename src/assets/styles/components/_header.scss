@@ -29,13 +29,19 @@
     img {
       display: block;
       margin: 0 auto;
+
+      &:last-child {
+        display: none;
+      }
     }
 
     svg {
       height: auto;
       width: 100%;
+
       path {
         fill: color(mono, white);
+        transition: fill .3s ease-in-out;
       }
     }
 
@@ -58,13 +64,21 @@
     box-shadow: 0 2px 5px 0 rgba(color(mono, black), .15);
 
     .header__logo {
-      top: 0;
-      width: 50px;
+      top: 5px;
+      width: 90px;
 
-      svg {
-        path {
-          fill: color(yellow, buttercup);
+      img {
+        &:first-child {
+          display: none;
         }
+
+        &:last-child {
+          display: block;
+        }
+      }
+
+      .logo__text {
+        fill: transparent;
       }
     }
 
@@ -85,6 +99,5 @@
       top: 10px;
     }
   }
-
 }
 

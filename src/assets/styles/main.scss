@@ -28,6 +28,13 @@ html, body {
   }
 }
 
+.logo {
+  &__text,
+  &__bread {
+    fill: color(mono, white);
+  }
+}
+
 // .page {
 //   background-color: color(gray, boulder);
 
@@ -112,6 +119,7 @@ html, body {
 
 .footer {
   background: color(yellow, buttercup);
+  padding-bottom: 30px;
   padding-top: 100px;
 
   @include media(">=tablet") {
@@ -204,6 +212,37 @@ html, body {
         @include media(">=desktop") {
           height: 42px;
         }
+      }
+    }
+  }
+
+  &__bottom {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 50px;
+
+    @include media(">=desktop") {
+      flex-direction: row;
+    }
+
+    p {
+      color: color(mono, white);
+      font-family: $font-title;
+      font-size: 18px;
+      font-weight: fw("medium");
+      margin-bottom: 30px;
+    }
+
+    img {
+      display: block;
+      margin: 0 auto 30px;
+      width: 80px;
+
+      @include media(">=desktop") {
+        width: 130px;
       }
     }
   }

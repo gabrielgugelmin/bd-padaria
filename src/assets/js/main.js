@@ -1,5 +1,6 @@
 $(function () {
   clickOutsideMenu();
+  MicroModal.init();
 
   // menu
   $('.js-open-menu').on('click', function(e) {

@@ -1,0 +1,128 @@
+
+.modal {
+  &__overlay {
+    align-items: center;
+    background: rgba(0,0,0,0.6);
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: z("fixed");
+  }
+
+  &__container {
+    background: left top / contain no-repeat url("../img/bg-modal.jpg") color(yellow, corn);
+    border-radius: 5px;
+    box-sizing: border-box;
+    max-height: 90vh;
+    max-width: 900px;
+    overflow-y: auto;
+    padding: 60px 30px 70px;
+  }
+
+  &__header {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+
+    .modal__close:before { content: "\2715"; }
+  }
+
+  &__title {
+    box-sizing: border-box;
+    color: color(brown, old-copper);
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 1.25;
+    margin-bottom: 0;
+    margin-top: 0;
+    text-align: center;
+    width: 100%;
+  }
+
+  &__close {
+    background: transparent;
+    border: 0;
+    color: color(gray, emperor);
+    cursor: pointer;
+    font-size: 36px;
+    position: absolute;
+    right: 30px;
+    top: 30px;
+  }
+
+  &__content {
+    color: rgba(0,0,0,.8);
+    line-height: 1.5;
+    margin-top: 60px;
+
+    h6,
+    p {
+      color: color(brown, old-copper);
+      font-size: 18px;
+    }
+
+    h6 {
+      font-family: $font-title;
+      font-weight: fw("semibold");
+    }
+
+    p {
+      font-weight: fw("light");
+      margin-bottom: 15px;
+    }
+  }
+}
+
+
+@keyframes mmfadeIn {
+    from { opacity: 0; }
+      to { opacity: 1; }
+}
+
+@keyframes mmfadeOut {
+    from { opacity: 1; }
+      to { opacity: 0; }
+}
+
+@keyframes mmslideIn {
+  from { transform: translateY(15%); }
+    to { transform: translateY(0); }
+}
+
+@keyframes mmslideOut {
+    from { transform: translateY(0); }
+    to { transform: translateY(-10%); }
+}
+
+.micromodal-slide {
+  display: none;
+}
+
+.micromodal-slide.is-open {
+  display: block;
+}
+
+.micromodal-slide[aria-hidden="false"] .modal__overlay {
+  animation: mmfadeIn .3s cubic-bezier(0.0, 0.0, 0.2, 1);
+}
+
+.micromodal-slide[aria-hidden="false"] .modal__container {
+  animation: mmslideIn .3s cubic-bezier(0, 0, .2, 1);
+}
+
+.micromodal-slide[aria-hidden="true"] .modal__overlay {
+  animation: mmfadeOut .3s cubic-bezier(0.0, 0.0, 0.2, 1);
+}
+
+.micromodal-slide[aria-hidden="true"] .modal__container {
+  animation: mmslideOut .3s cubic-bezier(0, 0, .2, 1);
+}
+
+.micromodal-slide .modal__container,
+.micromodal-slide .modal__overlay {
+  will-change: transform;
+}
