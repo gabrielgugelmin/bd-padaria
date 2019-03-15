@@ -58,17 +58,19 @@ $(function () {
 
   // INSTAGRAM
   var device = checkWindowWidth();
-  var feed = new Instafeed({
-    accessToken: '5417155028.de1e206.ddbace0852b54239a6ac34dd0318d8ae',
-        clientId: 'de1e2068b9e34c908d25bb6db2bc21d6',
-    get: 'user',
-    limit: (device === 'mobile') ? 6 : 5,
-    resolution: 'low_resolution',
-    tagName: 'rosalvo',
-    template: '<a target="_blank" class="instafeed__item" style="background-image: url({{image}})" href="{{link}}"><div class="instafeed__content"><div class="instafeed__info"><span class="instafeed__icon instafeed__icon--heart">{{likes}}</span><span class="instafeed__icon instafeed__icon--comment">{{comments}}</span></div></div></a>',
-    userId: '5417155028'
-  });
-  feed.run();
+  if ($('.instafeed').length) {
+    var feed = new Instafeed({
+      accessToken: '',
+      clientId: '',
+      get: 'user',
+      limit: (device === 'mobile') ? 6 : 5,
+      resolution: 'low_resolution',
+      tagName: '',
+      template: '<a target="_blank" class="instafeed__item" style="background-image: url({{image}})" href="{{link}}"><div class="instafeed__content"><div class="instafeed__info"><span class="instafeed__icon instafeed__icon--heart">{{likes}}</span><span class="instafeed__icon instafeed__icon--comment">{{comments}}</span></div></div></a>',
+      userId: ''
+    });
+    feed.run();
+  }
 
   // SCROLLBAR
   if ($('.js-scrollbar').length > 0) {
@@ -102,17 +104,19 @@ $(function () {
   });
 
   // Filtro produtos
-  var grid = new Muuri('.grid');
+  if ($('.grid').length) {
+    var grid = new Muuri('.grid');
 
-  grid.filter('[data-produto="melhorador"]');
-
-  $('.js-melhoradores').on('click', function () {
     grid.filter('[data-produto="melhorador"]');
-  });
 
-  $('.js-linha').on('click', function () {
-    grid.filter('[data-produto="rustyk"]');
-  });
+    $('.js-melhoradores').on('click', function () {
+      grid.filter('[data-produto="melhorador"]');
+    });
+
+    $('.js-linha').on('click', function () {
+      grid.filter('[data-produto="rustyk"]');
+    });
+  }
 });
 
 function closeMenu() {

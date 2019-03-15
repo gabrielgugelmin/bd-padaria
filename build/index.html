@@ -256,7 +256,7 @@
           <div class="row">
             <div class="col-sm-12">
               <div class="grid__footer">
-                <div class="button">
+                <div class="button" data-micromodal-trigger="newsletter-modal">
                   Receba o Catálogo dos Melhoradores
                 </div>
               </div>
@@ -271,11 +271,11 @@
             <div class="col-sm-12 col-lg-10 offset-lg-1">
               <h3 class="section__title section__title--center">Acompanhe nosso Canal no Youtube</h3>
               <div class="video-slider js-video-slider">
-                <div class="video-slider__item" style="background-image: url(https://img.youtube.com/vi/KCtLAqD63G4/hqdefault.jpg)"></div>
-                <div class="video-slider__item" style="background-image: url(https://img.youtube.com/vi/7auXTfgONgc/hqdefault.jpg)"></div>
-                <div class="video-slider__item" style="background-image: url(https://img.youtube.com/vi/2_w-vOR0TuE/hqdefault.jpg)"></div>
-                <div class="video-slider__item" style="background-image: url(https://img.youtube.com/vi/koYalOtVPww/hqdefault.jpg)"></div>
-                <div class="video-slider__item" style="background-image: url(https://img.youtube.com/vi/jz10GvbC8bA/hqdefault.jpg)"></div>
+                <a href="https://youtu.be/KCtLAqD63G4" rel="noopener" target="_blank" class="video-slider__item" style="background-image: url(https://img.youtube.com/vi/KCtLAqD63G4/hqdefault.jpg)"></a>
+                <a href="https://youtu.be/7auXTfgONgc" rel="noopener" target="_blank" class="video-slider__item" style="background-image: url(https://img.youtube.com/vi/7auXTfgONgc/hqdefault.jpg)"></a>
+                <a href="https://youtu.be/2_w-vOR0TuE" rel="noopener" target="_blank" class="video-slider__item" style="background-image: url(https://img.youtube.com/vi/2_w-vOR0TuE/hqdefault.jpg)"></a>
+                <a href="https://youtu.be/koYalOtVPww" rel="noopener" target="_blank" class="video-slider__item" style="background-image: url(https://img.youtube.com/vi/koYalOtVPww/hqdefault.jpg)"></a>
+                <a href="https://youtu.be/jz10GvbC8bA" rel="noopener" target="_blank" class="video-slider__item" style="background-image: url(https://img.youtube.com/vi/jz10GvbC8bA/hqdefault.jpg)"></a>
               </div>
             </div>
           </div>
@@ -319,8 +319,8 @@
 
                 <div class="form__footer">
                   <div class="checkbox">
-                    <input id="newsletter" type="checkbox"/>
-                    <label for="newsletter">Assinar nossa newsletter</label>
+                    <input id="newsletter" type="checkbox" class="form__checkbox"/>
+                    <label for="newsletter">Assinar nossa<br>newsletter</label>
                   </div>
 
                   <button class="button" type="submit">Enviar</button>
@@ -365,7 +365,7 @@
               <div class="footer__bottom">
                 <p>©2019 - Bom dia Padaria</p>
                 <img src="assets/img/logo-mini.svg" alt="Bom Dia Padaria">
-                <p>Desenvolvido pela Inffus</p>
+                <a href="https://www.inffus.com.br/" rel="noopener" target="_blank">Desenvolvido pela Inffus</a>
               </div>
             </div>
           </div>
@@ -377,7 +377,7 @@
   <div class="modal micromodal-slide" id="produto-1" aria-hidden="true">
     <div class="modal__overlay" tabindex="-1" data-micromodal-close>
       <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="produto-1-title">
-        <header class="modal__header">
+        <header class="modal__header modal__header--center">
           <h2 class="modal__title" id="produto-1-title">
             Melhorador BDP Equilíbrio
           </h2>
@@ -387,7 +387,7 @@
           <div class="container">
             <div class="row">
               <div class="col-md-6 justify-content-center align-items-center d-flex">
-                <img src="assets/img/p1.png" alt="Embalagem amarela e branca de uma mistura para panificação">
+                <img class="modal__img modal__img--mb" src="assets/img/p1.png" alt="Embalagem amarela e branca de uma mistura para panificação">
               </div>
               <div class="col-md-6">
                 <h6>Melhorador universal para sua farinha</h6>
@@ -414,42 +414,107 @@
   </div>
 
   <div class="modal micromodal-slide" id="produto-2" aria-hidden="true">
-      <div class="modal__overlay" tabindex="-1" data-micromodal-close>
-        <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="produto-2-title">
-          <header class="modal__header">
-            <h2 class="modal__title" id="produto-2-title">
-                Rustyk - Granomalt Amber
-            </h2>
-            <button class="modal__close" aria-label="Close modal" data-micromodal-close></button>
-          </header>
-          <main class="modal__content" id="produto-2-content">
-            <div class="container">
-              <div class="row">
-                <div class="col-md-6 justify-content-center align-items-center d-flex">
-                  <img src="assets/img/p-modal-2.png" alt="Embalagem amarela e branca de uma mistura para panificação">
-                </div>
-                <div class="col-md-6">
-                  <h6>Farinha de Malte dourada levemente acidificada.</h6>
-                  <p>
-                    Realça aromas naturais da farinha.
-                    Combinação única com notas maltadas e delicadamente ácidas, conferindo coloração dourada.
-                  </p>
-                  <h6>Dosagem Recomendada</h6>
-                  <p>
-                      1% - 5% base farinha
-                  </p>
-                  <h6>Modo de Aplicação</h6>
-                  <p>Granomalt Amber deve ser adicionado ao peso da farinha de trigo</p>
-                  <h6>Recomendações</h6>
-                  <p>Realça os aromas naturais da farinha, confere coloração dourada, ajuda a mascarar o sabor amargo em produtos integrais. Combina bem com pães integrais, rústicos e pães doces. Também, é indicado para outras categorias como biscoitos, bolos, snacks etc.</p>
-                  </p>
-                </div>
+    <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+      <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="produto-2-title">
+        <header class="modal__header modal__header--center">
+          <h2 class="modal__title" id="produto-2-title">
+              Rustyk - Granomalt Amber
+          </h2>
+          <button class="modal__close" aria-label="Close modal" data-micromodal-close></button>
+        </header>
+        <main class="modal__content" id="produto-2-content">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-6 justify-content-center align-items-center d-flex">
+                <img class="modal__img modal__img--mb" src="assets/img/p-modal-2.png" alt="Embalagem amarela e branca de uma mistura para panificação">
+              </div>
+              <div class="col-md-6">
+                <h6>Farinha de Malte dourada levemente acidificada.</h6>
+                <p>
+                  Realça aromas naturais da farinha.
+                  Combinação única com notas maltadas e delicadamente ácidas, conferindo coloração dourada.
+                </p>
+                <h6>Dosagem Recomendada</h6>
+                <p>
+                    1% - 5% base farinha
+                </p>
+                <h6>Modo de Aplicação</h6>
+                <p>Granomalt Amber deve ser adicionado ao peso da farinha de trigo</p>
+                <h6>Recomendações</h6>
+                <p>Realça os aromas naturais da farinha, confere coloração dourada, ajuda a mascarar o sabor amargo em produtos integrais. Combina bem com pães integrais, rústicos e pães doces. Também, é indicado para outras categorias como biscoitos, bolos, snacks etc.</p>
+                </p>
               </div>
             </div>
-          </main>
-        </div>
+          </div>
+        </main>
       </div>
     </div>
+  </div>
+
+  <div class="modal modal--no-bg micromodal-slide" id="newsletter-modal" aria-hidden="true">
+    <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+      <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="newsletter-title">
+        <header class="modal__header">
+          <h2 class="modal__title" id="newsletter-title">
+            Receba o catálogo Rustyk
+          </h2>
+          <p class="modal__description">Receba nossos catálogos em formato PDF em seu e-mail</p>
+          <button class="modal__close" aria-label="Close modal" data-micromodal-close></button>
+        </header>
+        <main class="modal__content" id="newsletter-content">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-4 justify-content-center align-items-center d-flex">
+                <img class="modal__img modal__img--mb" src="assets/img/newsletter.jpg" alt="Catálogo de produtos">
+              </div>
+              <div class="col-md-6 offset-md-1 align-items-center d-flex">
+                <form action="" class="form">
+                  <div class="form__control">
+                    <input type="text" class="form__input form__input--small form__input--white" placeholder="Nome">
+                  </div>
+                  <div class="form__control">
+                    <input type="email" class="form__input form__input--small form__input--white" placeholder="Email">
+                  </div>
+
+                  <div class="form__footer">
+                    <div class="checkbox">
+                      <input id="modal-newsletter" type="checkbox" class="form__checkbox form__checkbox--dark"/>
+                      <label for="modal-newsletter">Assinar nossa<br>newsletter</label>
+                    </div>
+
+                    <button class="button button--small button--dark" type="button" data-micromodal-trigger="sucesso" data-micromodal-close="newsletter-modal">Enviar</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal modal--no-bg modal--alert micromodal-slide" id="sucesso" aria-hidden="true">
+    <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+      <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="sucesso-title">
+        <header class="modal__header">
+          <button class="modal__close" aria-label="Close modal" data-micromodal-close></button>
+        </header>
+        <main class="modal__content" id="sucesso-content">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="modal__title">Mensagem enviada com sucesso!</div>
+                <p class="modal__text">Em breve entraremos em contato com você.</p>
+
+                <button class="button button--dark" data-micromodal-close="sucesso">OK</button>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+  </div>
+
   <script src="assets/js/bundle.min.js"></script>
 
 </body>

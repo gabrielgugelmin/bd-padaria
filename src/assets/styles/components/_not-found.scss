@@ -1,0 +1,52 @@
+.not-found {
+  background-color: color(yellow, buttercup);
+  padding-top: 100px;
+  text-align: center;
+
+  &__img {
+    display: block;
+    margin: 0 auto;
+    max-width: 160px;
+
+    @include media(">=desktop") {
+      max-width: 220px;
+    }
+  }
+
+  &__title,
+  &__subtitle {
+    color: color(mono, white);
+    font-family: $font-title;
+    font-weight: fw("medium");
+  }
+
+  &__title {
+    font-size: 60px;
+    line-height: 1;
+    margin-bottom: 10px;
+    margin-top: 45px;
+
+    @include media(">=desktop") {
+      font-size: 110px;
+    }
+  }
+
+  &__subtitle {
+    font-size: 22px;
+    margin-bottom: 15px;
+
+    @include media(">=desktop") {
+      font-size: 40px;
+    }
+  }
+
+  &__text {
+    color: color(mono, white);
+    font-weight: fw("light");
+    margin-bottom: 25px;
+
+    @include media(">=desktop") {
+      font-size: 20px;
+    }
+  }
+}

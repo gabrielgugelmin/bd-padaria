@@ -20,4 +20,13 @@
   @include media(">=desktop") {
     font-size: 18px;
   }
+
+  &--small {
+    padding: 4px 38px;
+  }
+
+  &--dark {
+    background-color: color(yellow, pizza);
+    border-color: color(brown, old-copper);
+  }
 }

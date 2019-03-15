@@ -1,4 +1,6 @@
 .form {
+  width: 100%;
+
   &__control {
     margin-bottom: 15px;
   }
@@ -23,6 +25,21 @@
         resize: none;
         height: 125px;
       }
+    }
+
+    &--small {
+      padding: 10px 15px;
+    }
+
+    &--white {
+      @include placeholder {
+        color: color(mono, black);
+        font-style: italic;
+      }
+
+      background-color: color(mono, white);
+      color: color(mono, black);
+      border: 1px solid color(brown, old-copper);
     }
   }
 
@@ -59,7 +76,7 @@
   $radio-unchecked-color: $checkbox-border-color-unchecked;
 
 
-  input[type=checkbox] {
+  .form__checkbox {
     display: none;
 
     @mixin checkbox-structure($width: 26px, $height: 26px, $top: -4px, $left: '', $border-color: '', $background-color: '') {
@@ -71,7 +88,7 @@
       width: $width;
 
       @if $border-color!='' {
-        border: 1px solid color(mono, white);
+        border: 1px solid $border-color;
       }
 
       @if $background-color!='' {
@@ -82,14 +99,14 @@
     }
 
     &:not(:checked) + label::before {
-      @include checkbox-structure($border-color: $checkbox-border-color-unchecked, $background-color: $checkbox-bg-color-unchecked);
+      @include checkbox-structure($border-color: color(mono, white), $background-color: $checkbox-bg-color-unchecked);
 
       left: 0;
     }
 
     &:checked + label {
       &::before {
-        @include checkbox-structure($border-color: $checkbox-border-color-checked, $background-color: $checkbox-bg-color-checked);
+        @include checkbox-structure($border-color: color(mono, white), $background-color: $checkbox-bg-color-checked);
 
         left: 0;
       }
@@ -104,20 +121,52 @@
         top: 2px;
       }
     }
+
+    &--dark {
+      &:not(:checked) + label::before {
+        @include checkbox-structure($border-color: color(brown, old-copper), $background-color: $checkbox-bg-color-unchecked);
+      }
+
+      &:checked + label {
+        &::before {
+          @include checkbox-structure($border-color: color(brown, old-copper), $background-color: $checkbox-bg-color-checked);
+          left: 0;
+        }
+
+        &::after {
+          @include checkbox-structure($width: 0, $height: 0);
+
+          color: color(brown, old-copper);
+          content: "\2713";
+          top: -2px;
+        }
+      }
+    }
   }
 
-  input[type=checkbox] + label,
-  input[type=radio] + label {
-    color: color(mono, white);
-    cursor: pointer;
-    font-size: 16px;
-    font-style: italic;
-    font-weight: fw("light");
-    padding-left: 40px;
-    position: relative;
+  .form__checkbox,
+  .form__radio {
+    + label {
+      color: color(mono, white);
+      cursor: pointer;
+      font-size: 16px;
+      font-style: italic;
+      font-weight: fw("light");
+      padding-left: 40px;
+      position: relative;
+    }
   }
 
-  input[type=radio] {
+  .form__checkbox {
+    &--dark {
+      + label {
+        color: color(mono, black);
+      }
+    }
+  }
+
+
+  .form__radio {
     display: none;
 
     @mixin radio-structure($color) {
@@ -147,6 +196,12 @@
         background-color: $radio-checked-color;
         transform: scale(0.4);
         animation: fade-in .5s;
+      }
+    }
+
+    &--dark {
+      + label {
+        color: color(mono, black);
       }
     }
   }

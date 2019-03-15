@@ -26,6 +26,16 @@ html, body {
     flex-direction: column;
     min-height: 100%;
   }
+
+  &--not-found {
+    .page-wrapper {
+      background-color: color(yellow, buttercup);
+    }
+
+    .header__logo {
+      display: none;
+    }
+  }
 }
 
 .logo {
@@ -228,12 +238,19 @@ html, body {
       flex-direction: row;
     }
 
-    p {
+    p,
+    a {
       color: color(mono, white);
       font-family: $font-title;
       font-size: 18px;
       font-weight: fw("medium");
       margin-bottom: 30px;
+    }
+
+    a {
+      &:hover {
+        text-decoration: underline;
+      }
     }
 
     img {
@@ -245,5 +262,9 @@ html, body {
         width: 130px;
       }
     }
+  }
+
+  &--no-bg {
+    background-image: none;
   }
 }
