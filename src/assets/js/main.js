@@ -24,9 +24,10 @@ $(function () {
     }
   });
 
-  // slider baner
+  // slider banner
   $('.js-banner-slider').slick({
-    arrows: false
+    arrows: false,
+    dots: true,
   });
 
   // slider youtube
@@ -60,14 +61,14 @@ $(function () {
   var device = checkWindowWidth();
   if ($('.instafeed').length) {
     var feed = new Instafeed({
-      accessToken: '',
-      clientId: '',
+      accessToken: 'asdasd',
+      clientId: 'asdasd',
       get: 'user',
       limit: (device === 'mobile') ? 6 : 5,
       resolution: 'low_resolution',
-      tagName: '',
+      tagName: 'asdasd',
       template: '<a target="_blank" class="instafeed__item" style="background-image: url({{image}})" href="{{link}}"><div class="instafeed__content"><div class="instafeed__info"><span class="instafeed__icon instafeed__icon--heart">{{likes}}</span><span class="instafeed__icon instafeed__icon--comment">{{comments}}</span></div></div></a>',
-      userId: ''
+      userId: 'asdasd'
     });
     feed.run();
   }

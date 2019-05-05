@@ -63,3 +63,32 @@
     }
   }
 }
+
+.slick-dots {
+  bottom: 13px;
+  display: flex;
+  justify-content: center;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  z-index: 2;
+
+  button {
+    background: color(yellow, buttercup);
+    border-radius: 50%;
+    border: 2px solid color(mono, black);
+    cursor: pointer;
+    font-size: 0;
+    height: 16px;
+    margin: 0 3px;
+    transition: .25s ease-in-out;
+    width: 16px;
+  }
+
+  .slick-active {
+    button {
+      background: color(mono, black);
+      border: 2px solid color(yellow, buttercup);
+    }
+  }
+}
